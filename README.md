@@ -1,6 +1,5 @@
-# TTS-rooms
+# ![tts logo](https://user-images.githubusercontent.com/98839796/225055945-ebfe1a25-6cbf-45ca-a17f-f140cb37ad11.jpg) TTS-rooms
 
-![tts logo](https://user-images.githubusercontent.com/98839796/225055945-ebfe1a25-6cbf-45ca-a17f-f140cb37ad11.jpg)
 
 ![tts](https://user-images.githubusercontent.com/98839796/225056344-a8877034-c4c7-4ab7-b63b-51cfe600eba0.png)
 
