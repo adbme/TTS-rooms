@@ -47,7 +47,7 @@ class DropdownButtonApp extends StatelessWidget {
             ),
           ),
         ),
-        backgroundColor: const Color(0xFF384047),
+        backgroundColor: const Color(0xFF282C31),
         body: const Center(
           child: CustomDropdownButton(),
         ),
@@ -77,6 +77,7 @@ class _CustomDropdownButtonState extends State<CustomDropdownButton> {
   @override
   Widget build(BuildContext context) {
     return Column(
+
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
@@ -86,10 +87,14 @@ class _CustomDropdownButtonState extends State<CustomDropdownButton> {
             onPressed: toggleDropdown,
             child: Text(
               dropdownValue,
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20, color: Colors.black),
+            ),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.yellow),
             ),
           ),
         ),
+
 
         // if (dropdownValue == 'Monch')
         // print("dji"),
@@ -103,10 +108,10 @@ class _CustomDropdownButtonState extends State<CustomDropdownButton> {
             width: 200,
             decoration: BoxDecoration(
               border: Border.all(
-                color: Colors.yellow,
-                width: 2,
+                color: Colors.black,
+                width: 3,
               ),
-              color: Colors.black,
+              color: Colors.white,
             ),
             child: Column(
               children: list
@@ -148,7 +153,7 @@ class _CustomDropdownButtonState extends State<CustomDropdownButton> {
                     },
                     child: Text(
                       value,
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      style: TextStyle(fontSize: 20, color: Colors.black),
                     ),
                   ),
                 ),

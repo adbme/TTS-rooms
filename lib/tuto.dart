@@ -65,62 +65,32 @@ class _HomeState extends State<Home> {
 
       ),
       body: Container(
-          child: Column(
-              children:[
-                AspectRatio(
-                  aspectRatio: controller.value.aspectRatio,
-                  child: VideoPlayer(controller),
+        child: Column(
+          children:[
+            AspectRatio(
+              aspectRatio: controller.value.aspectRatio,
+              child: VideoPlayer(controller),
+            ),
+            Container(
+              padding: EdgeInsets.all(20.0),
+              child: Center(
+                child: Text(
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in nunc massa. Aliquam non lectus vel magna molestie iaculis. Integer gravida arcu ac enim tristique, id congue lorem auctor. Duis ac purus risus. Vestibulum condimentum magna quis lectus auctor, eget blandit lacus tempor. Sed non diam non ex finibus euismod. ',
+                  textAlign: TextAlign.center,
                 ),
-
-                Container( //duration of video
-                  child: Text("Total Duration: " + controller.value.duration.toString()),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(20.0),
+              child: Center(
+                child: Text(
+                  'Sed porttitor in leo in facilisis. Praesent vel justo ac urna blandit auctor at vel sapien. Nunc congue dolor id nisi varius, in consectetur elit efficitur. Sed sed urna ipsum. Donec commodo, velit ac elementum bibendum, enim leo tempor elit, id commodo mi libero sed odio. Donec quis dui eget felis ultrices sollicitudin a eu mi. Duis eleifend velit nec velit laoreet commodo. Nulla ultrices ante non ligula placerat, non egestas augue cursus. ',
+                  textAlign: TextAlign.center,
                 ),
-
-                Container(
-                    child: VideoProgressIndicator(
-                        controller,
-                        allowScrubbing: true,
-                        colors:VideoProgressColors(
-                          backgroundColor: Colors.grey,
-                          playedColor: Colors.black,
-                          bufferedColor: Colors.grey,
-                        )
-                    )
-                ),
-
-                Container(
-                  child: Row(
-                    children: [
-                      IconButton(
-                          onPressed: (){
-                            if(controller.value.isPlaying){
-                              controller.pause();
-                            }else{
-                              controller.play();
-                            }
-
-                            setState(() {
-
-                            });
-                          },
-                          icon:Icon(controller.value.isPlaying?Icons.pause:Icons.play_arrow)
-                      ),
-
-                      IconButton(
-                          onPressed: (){
-                            controller.seekTo(Duration(seconds: 0));
-
-                            setState(() {
-
-                            });
-                          },
-                          icon:Icon(Icons.restart_alt)
-                      )
-                    ],
-                  ),
-                )
-              ]
-          )
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
