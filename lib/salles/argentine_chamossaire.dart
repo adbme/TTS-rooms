@@ -7,11 +7,11 @@ import '../TTS-rooms.dart';
 
 
 void main() {
-  runApp(pleiades());
+  runApp(argentine_chamossaire());
 }
 
-class pleiades extends StatelessWidget {
-  const pleiades({Key? key}) : super(key: key);
+class argentine_chamossaire extends StatelessWidget {
+  const argentine_chamossaire({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Argentine + Chamossaire',
-          style: TextStyle(fontSize: 50),
+          style: TextStyle(fontSize: 28),
         ),
         centerTitle: true,
         backgroundColor: const Color(0xFF212529),

@@ -7,11 +7,11 @@ import '../TTS-rooms.dart';
 
 
 void main() {
-  runApp(pleiades());
+  runApp(argentine());
 }
 
-class pleiades extends StatelessWidget {
-  const pleiades({Key? key}) : super(key: key);
+class argentine extends StatelessWidget {
+  const argentine({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

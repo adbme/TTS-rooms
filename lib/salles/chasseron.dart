@@ -7,11 +7,11 @@ import '../TTS-rooms.dart';
 
 
 void main() {
-  runApp(pleiades());
+  runApp(chasseron());
 }
 
-class pleiades extends StatelessWidget {
-  const pleiades({Key? key}) : super(key: key);
+class chasseron extends StatelessWidget {
+  const chasseron({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

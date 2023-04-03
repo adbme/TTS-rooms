@@ -73,8 +73,8 @@ flutter:
       - assets/salles_glb/suchet.glb
       - assets/salles_glb/wengen.glb
         
-        
-        - assets/videos/TTS.mp4
+
+      - assets/videos/TTS.mp4
 
   #   - images/a_dot_ham.jpeg
 

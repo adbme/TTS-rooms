@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ttsrooms/pleiades.dart';
+import 'package:ttsrooms/salles/argentine.dart';
+import 'package:ttsrooms/salles/argentine_chamossaire.dart';
+import 'package:ttsrooms/salles/chamossaire.dart';
+import 'package:ttsrooms/salles/chasseron.dart';
+import 'package:ttsrooms/salles/suchet.dart';
+import 'package:ttsrooms/salles/wengen.dart';
 import 'package:ttsrooms/suchet.dart';
 import 'main.dart';
 
@@ -128,21 +134,29 @@ class _CustomDropdownButtonState extends State<CustomDropdownButton> {
                       }
                       else if (value == 'Suchet') {
                         print("Suchet");
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  suchet()));
+
+
                       }
                       else if (value == 'Chasseron') {
                         print("chasseron");
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  chasseron()));
                       }
                       else if (value == 'Argentine') {
                         print("argentine");
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  argentine()));
                       }
                       else if (value == 'Chamossaire') {
                         print("chamossaire");
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  chamossaire()));
                       }
                       else if (value == 'Wengen') {
                         print("wengen");
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  wengen()));
                       }
                       else if (value == 'Arg + Chamo') {
                         print("Argentine + Chamossaire");
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  argentine_chamossaire()));
                       }
 
 
