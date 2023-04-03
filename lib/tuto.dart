@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
+import 'main.dart';
+
 main(){
   runApp(VideoPlayerApp());
 }
@@ -44,8 +46,23 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text("Video Player in Flutter"),
-        backgroundColor: Colors.redAccent,
+
+        title: Text('rooms TUTO'),
+        backgroundColor: const Color(0xFF212529),
+        leading: Container(
+          padding: const EdgeInsets.all(8.0),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyApp()),
+              );
+            },
+            child: Image.asset('assets/images/logotts.jpg'),
+          ),
+        ),
+
+
       ),
       body: Container(
           child: Column(
@@ -97,7 +114,7 @@ class _HomeState extends State<Home> {
 
                             });
                           },
-                          icon:Icon(Icons.stop)
+                          icon:Icon(Icons.restart_alt)
                       )
                     ],
                   ),
