@@ -38,7 +38,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       height: double.infinity,
       child: FittedBox(
         fit: BoxFit.cover,
-        child: Image.asset('assets/images/chasseronImage.png'),
+        child: Image.asset('assets/images/test.png'),
 
       ),
 
@@ -50,7 +50,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       child: FittedBox(
 
         fit: BoxFit.cover,
-        child: Image.asset(''),
+        child: Image.asset('assets/images/test.png'),
       ),
     ),
 

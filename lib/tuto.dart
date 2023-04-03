@@ -1,63 +1,109 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class VideoPage extends StatefulWidget {
-  @override
-  _VideoPageState createState() => _VideoPageState();
+main(){
+  runApp(VideoPlayerApp());
 }
 
-class _VideoPageState extends State<VideoPage> {
-  late VideoPlayerController _controller;
-  late Future<void> _initializeVideoPlayerFuture;
+class VideoPlayerApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Home(),
+    );
+  }
+}
+
+class Home extends StatefulWidget{
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+
+  late VideoPlayerController controller;
 
   @override
   void initState() {
+    loadVideoPlayer();
     super.initState();
-    _controller = VideoPlayerController.asset('assets/videos/TTS.mp4');
-    _initializeVideoPlayerFuture = _controller.initialize();
-    _controller.setLooping(true);
   }
 
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
+  loadVideoPlayer(){
+    controller = VideoPlayerController.network('assets/videos/TTS.mp4');
+    controller.addListener(() {
+      setState(() {});
+    });
+    controller.initialize().then((value){
+      setState(() {});
+    });
+
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       appBar: AppBar(
-        title: Text('Ma vidéo'),
+        title: Text("Video Player in Flutter"),
+        backgroundColor: Colors.redAccent,
       ),
-      body: Center(
-        child: FutureBuilder(
-          future: _initializeVideoPlayerFuture,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              return AspectRatio(
-                aspectRatio: _controller.value.aspectRatio,
-                child: VideoPlayer(_controller),
-              );
-            } else {
-              return CircularProgressIndicator();
-            }
-          },
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            if (_controller.value.isPlaying) {
-              _controller.pause();
-            } else {
-              _controller.play();
-            }
-          });
-        },
-        child: Icon(
-          _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
-        ),
+      body: Container(
+          child: Column(
+              children:[
+                AspectRatio(
+                  aspectRatio: controller.value.aspectRatio,
+                  child: VideoPlayer(controller),
+                ),
+
+                Container( //duration of video
+                  child: Text("Total Duration: " + controller.value.duration.toString()),
+                ),
+
+                Container(
+                    child: VideoProgressIndicator(
+                        controller,
+                        allowScrubbing: true,
+                        colors:VideoProgressColors(
+                          backgroundColor: Colors.grey,
+                          playedColor: Colors.black,
+                          bufferedColor: Colors.grey,
+                        )
+                    )
+                ),
+
+                Container(
+                  child: Row(
+                    children: [
+                      IconButton(
+                          onPressed: (){
+                            if(controller.value.isPlaying){
+                              controller.pause();
+                            }else{
+                              controller.play();
+                            }
+
+                            setState(() {
+
+                            });
+                          },
+                          icon:Icon(controller.value.isPlaying?Icons.pause:Icons.play_arrow)
+                      ),
+
+                      IconButton(
+                          onPressed: (){
+                            controller.seekTo(Duration(seconds: 0));
+
+                            setState(() {
+
+                            });
+                          },
+                          icon:Icon(Icons.stop)
+                      )
+                    ],
+                  ),
+                )
+              ]
+          )
       ),
     );
   }

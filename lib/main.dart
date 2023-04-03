@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
                   Navigator.push(context, MaterialPageRoute(builder: (context) =>  AboutUsPage()));
 
                 } else if (value == 1) {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>  VideoPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) =>  VideoPlayerApp()));
                 } else if (value == 2) {
                   print("Lien 3");
                 }
@@ -156,8 +156,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             child: ElevatedButton(
               child: const Text('Login'),
               onPressed: () {
-                if (nameController.text == 'adil' &&
-                    passwordController.text == 'test') {
+                if (nameController.text == '' &&
+                    passwordController.text == '') {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -168,7 +168,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     builder: (BuildContext context) {
                       return AlertDialog(
                         title: const Text("Login Erreur"),
-                        content: const Text("Le mot de passe ou username est faux !"),
+                        content: const Text("Le mot de passe ou username est faux"),
                         actions: <Widget>[
                           TextButton(
                             child: const Text("OK"),
