@@ -65,8 +65,16 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
       - assets/images/
+      - assets/salles_glb/argentine.glb
+      - assets/salles_glb/argentine_chamossaire.glb
+      - assets/salles_glb/chamossaire.glb
+      - assets/salles_glb/chasseron.glb
       - assets/salles_glb/pleiades.glb
-      - assets/videos/TTS.mp4
+      - assets/salles_glb/suchet.glb
+      - assets/salles_glb/wengen.glb
+        
+        
+        - assets/videos/TTS.mp4
 
   #   - images/a_dot_ham.jpeg
 
