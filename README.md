@@ -74,6 +74,8 @@ flutter build apk
 
 - téléchargez le maintenant sur votre android et profiter de TTS rooms !
 
+[DOWLOAD APK](https://www.youtube.com/watch?v=tdk3a92RX-0)
+
 ### Arrivé au login, vous pouvez rentrer sans problèmes, le password et user ont été enlever pour le moment
 
 ``` dart
