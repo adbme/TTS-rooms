@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ttsrooms/portal.dart';
 import 'package:video_player/video_player.dart';
 
-import 'main.dart';
 
 main(){
   runApp(VideoPlayerApp());
@@ -33,7 +32,7 @@ class _HomeState extends State<Home> {
   }
 
   loadVideoPlayer(){
-    controller = VideoPlayerController.network('assets/videos/TTS.mp4');
+    controller = VideoPlayerController.network('assets/vdeos/TTS.mp4');
     controller.addListener(() {
       setState(() {});
     });

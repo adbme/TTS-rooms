@@ -140,7 +140,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     builder: (BuildContext context) {
                       return AlertDialog(
                         title: const Text("Login Erreur"),
-                        content: const Text("Le mot de passe ou username est faux"),
+                        content: const Text("Le mot de passe ou le username est faux"),
                         actions: <Widget>[
                           TextButton(
                             child: const Text("OK"),
