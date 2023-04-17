@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ttsrooms/TTS-rooms.dart';
 import 'package:ttsrooms/about.dart';
 import 'package:ttsrooms/tuto.dart';
 
@@ -75,8 +76,11 @@ class portal extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const DropdownButtonApp()));
+              },
               icon: Icon(Icons.table_restaurant_outlined, color: Colors.black, size: 34.0),
               label: Text('DISPOSITION', style: TextStyle(color: Colors.black, fontSize: 24.0)),
               style: ElevatedButton.styleFrom(
@@ -84,10 +88,29 @@ class portal extends StatelessWidget {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                 minimumSize: Size(300, 150),
               ),
+
             ),
             SizedBox(height: 100),
+
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                        title: Text("Cette option de TTS rooms n'est malheureusement pas encore disponible pour le moment !"), icon: Icon(Icons.sentiment_very_dissatisfied, size: 34.0),
+                      actions: <Widget>[
+                        TextButton(
+                          child: Text('OK'),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
               icon: Icon(Icons.rule, color: Colors.black, size: 34.0),
               label: Text('RÉSERVATION', style: TextStyle(color: Colors.black, fontSize: 24.0)),
               style: ElevatedButton.styleFrom(
@@ -96,6 +119,8 @@ class portal extends StatelessWidget {
                 minimumSize: Size(300, 150),
               ),
             ),
+
+
           ],
         ),
       ),
