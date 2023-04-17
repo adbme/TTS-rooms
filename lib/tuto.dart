@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ttsrooms/portal.dart';
 import 'package:video_player/video_player.dart';
 
 import 'main.dart';
@@ -55,7 +56,7 @@ class _HomeState extends State<Home> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MyApp()),
+                MaterialPageRoute(builder: (context) => portal()),
               );
             },
             child: Image.asset('assets/images/logotts.jpg'),

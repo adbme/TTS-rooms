@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ttsrooms/portal.dart';
 
 import 'main.dart';
 
@@ -24,7 +25,7 @@ class AboutUsPage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MyApp()),
+                  MaterialPageRoute(builder: (context) => portal()),
                 );
               },
               child: Image.asset('assets/images/logotts.jpg'),

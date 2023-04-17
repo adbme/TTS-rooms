@@ -4,6 +4,7 @@ import 'package:ttsrooms/tuto.dart';
 
 import 'TTS-rooms.dart';
 import 'about.dart';
+import 'portal.dart';
 
 
 void main() => runApp(const MyApp());
@@ -26,36 +27,7 @@ class MyApp extends StatelessWidget {
           ),
           title: Text("Rooms"),
           actions: [
-            PopupMenuButton(
-              icon: Icon(Icons.menu),
-              itemBuilder: (context) {
-                return [
-                  PopupMenuItem<int>(
 
-                    value: 0,
-                    child: Text("à propos"),
-                  ),
-                  PopupMenuItem<int>(
-                    value: 1,
-                    child: Text("Tuto"),
-                  ),
-                  PopupMenuItem<int>(
-                    value: 2,
-                    child: Text("Lien 3"),
-                  ),
-                ];
-              },
-              onSelected: (value) {
-                if (value == 0) {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>  AboutUsPage()));
-
-                } else if (value == 1) {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>  VideoPlayerApp()));
-                } else if (value == 2) {
-                  print("Lien 3");
-                }
-              },
-            ),
           ],
         ),
         body: const MyStatefulWidget(),
@@ -161,7 +133,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const DropdownButtonApp()));
+                          builder: (context) => portal()));
                 } else {
                   showDialog(
                     context: context,

@@ -30,7 +30,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Argentine + Chamossaire',
-          style: TextStyle(fontSize: 28),
+          style: TextStyle(fontSize: 25),
         ),
         centerTitle: true,
         backgroundColor: const Color(0xFF212529),
