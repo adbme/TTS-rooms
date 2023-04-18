@@ -61,7 +61,7 @@ class portal extends StatelessWidget {
                 Navigator.push(context, MaterialPageRoute(builder: (context) =>  AboutUsPage()));
 
               } else if (value == 1) {
-                Navigator.push(context, MaterialPageRoute(builder: (context) =>  VideoPlayerApp()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Tuto()));
               } else if (value == 2) {
                 Navigator.push(
                   context,

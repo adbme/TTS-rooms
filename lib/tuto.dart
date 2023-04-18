@@ -1,97 +1,154 @@
 import 'package:flutter/material.dart';
 import 'package:ttsrooms/portal.dart';
-import 'package:video_player/video_player.dart';
 
-
-main(){
-  runApp(VideoPlayerApp());
+class Tuto extends StatefulWidget {
+  @override
+  _TTSRoomsState createState() => _TTSRoomsState();
 }
 
-class VideoPlayerApp extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Home(),
-    );
-  }
-}
-
-class Home extends StatefulWidget{
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-
-  late VideoPlayerController controller;
-
-  @override
-  void initState() {
-    loadVideoPlayer();
-    super.initState();
-  }
-
-  loadVideoPlayer(){
-    controller = VideoPlayerController.network('assets/vdeos/TTS.mp4');
-    controller.addListener(() {
-      setState(() {});
-    });
-    controller.initialize().then((value){
-      setState(() {});
-    });
-
-  }
+class _TTSRoomsState extends State<Tuto> {
+  late String optionSelected;
+  late String salleSelected;
+  late String dispositionSelected;
+  bool isPlaying = false;
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar: AppBar(
-
-        title: Text('rooms TUTO'),
-        backgroundColor: const Color(0xFF212529),
-        leading: Container(
-          padding: const EdgeInsets.all(8.0),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => portal()),
-              );
-            },
-            child: Image.asset('assets/images/logotts.jpg'),
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Tuto'),
+          backgroundColor: const Color(0xFF212529),
+          leading: Container(
+            padding: const EdgeInsets.all(8.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => portal()),
+                );
+              },
+              child: Image.asset('assets/images/logotts.jpg'),
+            ),
           ),
         ),
-
-
-      ),
-      body: Container(
+        body: SingleChildScrollView(
         child: Column(
-          children:[
-            AspectRatio(
-              aspectRatio: controller.value.aspectRatio,
-              child: VideoPlayer(controller),
-            ),
-            Container(
-              padding: EdgeInsets.all(20.0),
-              child: Center(
-                child: Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in nunc massa. Aliquam non lectus vel magna molestie iaculis. Integer gravida arcu ac enim tristique, id congue lorem auctor. Duis ac purus risus. Vestibulum condimentum magna quis lectus auctor, eget blandit lacus tempor. Sed non diam non ex finibus euismod. ',
-                  textAlign: TextAlign.center,
-                ),
+        children: [
+          SizedBox(height: 50),
+          Row(
+            children: [
+              Icon(Icons.check_circle, color: Color(0xFFDAC036)),
+              SizedBox(width: 20),
+              Text(
+                'Etapes TTS rooms :', // sous-titre
+                style: TextStyle(fontSize: 30, color: Color(0xFFDAC036)),
               ),
-            ),
-            Container(
-              padding: EdgeInsets.all(20.0),
-              child: Center(
-                child: Text(
-                  'Sed porttitor in leo in facilisis. Praesent vel justo ac urna blandit auctor at vel sapien. Nunc congue dolor id nisi varius, in consectetur elit efficitur. Sed sed urna ipsum. Donec commodo, velit ac elementum bibendum, enim leo tempor elit, id commodo mi libero sed odio. Donec quis dui eget felis ultrices sollicitudin a eu mi. Duis eleifend velit nec velit laoreet commodo. Nulla ultrices ante non ligula placerat, non egestas augue cursus. ',
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+            ],
+          ),
+          SizedBox(height: 100),
+    Text(
+    'Choisir votre option', // sous-titre
+    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+    ),
+    SizedBox(height: 100),
+    // image de 100% de largeur
+    Image.asset(
+    'assets/images/options.png',
+    width: MediaQuery.of(context).size.width,
+    ),
+    SizedBox(height: 100),
+    Text(
+    'Choisir la salle', // sous-titre
+    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+    ),
+    SizedBox(height: 100),
+    // image de 100% de largeur
+    Image.asset(
+    'assets/images/salles.png',
+    width: MediaQuery.of(context).size.width,
+    ),
+    SizedBox(height: 100),
+    Text(
+    'Lancer la disposition pour la visualiser', // sous-titre
+    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+    ),
+    SizedBox(height: 100),
+    Text(
+    'Pour pouvoir visualiser votre disposition sélectionnez d\'abord le menu ci-dessous',
+    style: TextStyle(fontSize: 16),
+    ),
+    SizedBox(height: 100),
+    // image de 100% de largeur
+    Image.asset(
+    'assets/images/menu.png',
+    width: MediaQuery.of(context).size.width,
+    ),
+    SizedBox(height: 100),
+    Text(
+    'Choisissez ensuite la disposition que vous voulez',
+    style: TextStyle(fontSize: 16),
+    ),
+    SizedBox(height: 100),
+    // image de 100% de largeur
+    Image.asset(
+    'assets/images/disposition.png',
+    width: MediaQuery.of(context).size.width,
+    ),
+    SizedBox(height: 100),
+    isPlaying
+    ? Text(
+    'Arrêter la disposition avec l\'icone pause, remettez la barre de la disposition au début et choisissez à nouveau une disposition',
+    style: TextStyle(fontSize: 16),
+    )
+        : Text(
+    'Lancez la avec l\'icone play ci-dessous',
+    style: TextStyle(fontSize: 16),
+    ),
+    SizedBox(height: 100),
+    // image de 100% de largeur
+    Image.asset(
+    'assets/images/play.png',
+    width: MediaQuery.of(context).size.width,
+    ),
+    SizedBox(height: 100),
+
+          Text(
+              'Bravo ! Profitez de voir la disposition !', // sous-titre
+              style: TextStyle(fontSize: 16)
+          ),
+          SizedBox(height: 100),
+          Image.asset(
+            'assets/images/bravo.png',
+            width: MediaQuery.of(context).size.width,
+          ),
+          SizedBox(height: 100),
+          Text(
+              'Pour relancer une nouvelle suivez les étapes suivantes', // sous-titre
+              style: TextStyle(fontSize: 16)
+          ),
+          SizedBox(height: 100),
+          Text(
+            'Voici une vidéo pour qui montre l’expliquation', // sous-titre
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+    SizedBox(height: 10),
+    // Vidéo de 100% de largeur
+    Container(
+    width: MediaQuery.of(context).size.width,
+    height: 200,
+    decoration: BoxDecoration(
+    color: Colors.grey[300],
+    ),
+    child: Center(
+    child: Text(
+    'vidéo tuto',
+    style: TextStyle(fontSize: 16),
+    ),
+    ),
+    ),
+      ],
+    ),
+    ),
     );
   }
 }
