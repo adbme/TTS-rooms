@@ -45,45 +45,45 @@ class _TTSRoomsState extends State<Tuto> {
               ),
             ],
           ),
-          SizedBox(height: 100),
+          SizedBox(height: 50),
     Text(
     'Choisir votre option', // sous-titre
     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
     ),
-    SizedBox(height: 100),
+    SizedBox(height: 50),
     // image de 100% de largeur
     Image.asset(
     'assets/images/options.png',
     width: MediaQuery.of(context).size.width,
     ),
-    SizedBox(height: 100),
+    SizedBox(height: 50),
     Text(
     'Choisir la salle', // sous-titre
     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
     ),
-    SizedBox(height: 100),
+    SizedBox(height: 50),
     // image de 100% de largeur
     Image.asset(
     'assets/images/salles.png',
     width: MediaQuery.of(context).size.width,
     ),
-    SizedBox(height: 100),
+    SizedBox(height: 50),
     Text(
     'Lancer la disposition pour la visualiser', // sous-titre
     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
     ),
-    SizedBox(height: 100),
+    SizedBox(height: 50),
     Text(
     'Pour pouvoir visualiser votre disposition sélectionnez d\'abord le menu ci-dessous',
     style: TextStyle(fontSize: 16),
     ),
-    SizedBox(height: 100),
+    SizedBox(height: 50),
     // image de 100% de largeur
     Image.asset(
     'assets/images/menu.png',
     width: MediaQuery.of(context).size.width,
     ),
-    SizedBox(height: 100),
+    SizedBox(height: 50),
     Text(
     'Choisissez ensuite la disposition que vous voulez',
     style: TextStyle(fontSize: 16),
